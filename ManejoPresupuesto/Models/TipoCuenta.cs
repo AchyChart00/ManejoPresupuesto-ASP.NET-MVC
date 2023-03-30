@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ManejoPresupuesto.Validaciones;
+using System.ComponentModel.DataAnnotations;
 
 namespace ManejoPresupuesto.Models
 {
@@ -7,8 +8,7 @@ namespace ManejoPresupuesto.Models
         public int Id { get; set; }
         //Validaciones
         [Required(ErrorMessage ="El campo {0} es requerido")]
-        [StringLength(maximumLength:50, MinimumLength =3, ErrorMessage ="La longitud del campo {0} debe estar entre {2} y {1} ")]
-        [Display(Name ="Nombre del tipo cuenta")]
+        [PrimeraLetraMayuscula]
         public string Nombre { get; set; }
         public int UsuarioId { get; set; }
         public int Orden { get; set; }

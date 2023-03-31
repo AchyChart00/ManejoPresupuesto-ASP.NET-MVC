@@ -21,6 +21,7 @@ namespace ManejoPresupuesto.Controllers
         [HttpPost]
         public async Task<IActionResult> Crear(TipoCuenta tipoCuenta)
         {
+            //Con este código evito que los valores introducidos en el formulario se pierdan
             if (!ModelState.IsValid)
             {
                 return View(tipoCuenta);

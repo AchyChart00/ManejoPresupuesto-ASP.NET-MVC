@@ -45,7 +45,7 @@ namespace ManejoPresupuesto.Servicios
                         Nombre, 
                         Orden 
                 FROM TiposCuentas 
-                WHERE UsuarioId = @UsuarioId;",
+                WHERE UsuarioId = @UsuarioId ORDER BY Orden;",
                 new { usuarioId }
                 );
         }
@@ -73,7 +73,14 @@ namespace ManejoPresupuesto.Servicios
         {
             using var connection = new SqlConnection(connectionString);
 
-            await connection.ExecuteAsync("DELETE TiposCuentas WHERE Id = @Id;", new { id});
+            await connection.ExecuteAsync(@"DELETE TiposCuentas WHERE Id = @Id;", new { id});
+        }
+
+        public async Task Ordenar(IEnumerable<TipoCuenta> tiposCuentasOrdenados)
+        {
+            var query = @"UPDATE TiposCuentas SET Orden = @Orden WHERE Id = @Id;";
+            using var connection = new SqlConnection(connectionString); 
+            await connection.ExecuteAsync(query, tiposCuentasOrdenados);
         }
     }
 }

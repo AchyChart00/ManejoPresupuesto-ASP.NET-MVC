@@ -68,5 +68,12 @@ namespace ManejoPresupuesto.Servicios
                                                                         FROM TiposCuentas
                                                                         WHERE Id = @Id AND UsuarioId = @UsuarioId;", new { id, usuarioId});
         }
+
+        public async Task Borrar(int id)
+        {
+            using var connection = new SqlConnection(connectionString);
+
+            await connection.ExecuteAsync("DELETE TiposCuentas WHERE Id = @Id;", new { id});
+        }
     }
 }

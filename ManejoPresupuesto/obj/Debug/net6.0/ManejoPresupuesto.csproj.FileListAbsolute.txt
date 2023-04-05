@@ -65,3 +65,4 @@ E:\FullStack\CSharp\CShapCurso\CursoASPNET_MVC\ManejoPresupuesto\ManejoPresupues
 E:\FullStack\CSharp\CShapCurso\CursoASPNET_MVC\ManejoPresupuesto\ManejoPresupuesto\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\FullStack\CSharp\CShapCurso\CursoASPNET_MVC\ManejoPresupuesto\ManejoPresupuesto\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\FullStack\CSharp\CShapCurso\CursoASPNET_MVC\ManejoPresupuesto\ManejoPresupuesto\obj\Debug\net6.0\ManejoPresupuesto.csproj.CopyComplete
+E:\FullStack\CSharp\CShapCurso\CursoASPNET_MVC\ManejoPresupuesto\ManejoPresupuesto\obj\Debug\net6.0\scopedcss\Views\Cuentas\Index.cshtml.rz.scp.css

@@ -57,5 +57,12 @@ namespace ManejoPresupuesto.Servicios
                 categoria
                 );   
         }
+
+        public async Task Borrar(int id)
+        {
+            using var connection = new SqlConnection(connectionString);
+            await connection.ExecuteAsync(@"DELETE Categorias WHERE Id = @Id", new { id});
+        
+        }
     }
 }

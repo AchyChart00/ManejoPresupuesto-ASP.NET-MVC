@@ -36,5 +36,26 @@ namespace ManejoPresupuesto.Servicios
                 new { usuarioId}
                 );
         }
+
+        public async Task<Categoria> ObtenerPorId(int id, int usuarioId)
+        {
+            using var connection = new SqlConnection(connectionString);
+
+            return await connection.QueryFirstOrDefaultAsync<Categoria>(
+                @"SELECT * FROM Categorias WHERE Id = @Id AND UsuarioId = @UsuarioId", 
+                new { id, usuarioId}
+                );
+
+        }
+
+        public async Task Actualizar(Categoria categoria)
+        {
+            using var connection = new SqlConnection(connectionString);
+            await connection.ExecuteAsync(
+                @"UPDATE Categorias SET Nombre = @Nombre, TipoOperacionId = @TipoOperacionId
+                WHERE Id = @Id",
+                categoria
+                );   
+        }
     }
 }

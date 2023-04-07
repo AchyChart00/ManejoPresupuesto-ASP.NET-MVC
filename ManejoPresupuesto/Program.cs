@@ -14,6 +14,7 @@ namespace ManejoPresupuesto
             builder.Services.AddTransient<IRepositorioTiposCuentas, RepositorioTiposCuentas>();
             builder.Services.AddTransient<IServicioUsuarios, ServicioUsuarios>();
             builder.Services.AddTransient<IRepositorioCuentas, RepositorioCuentas>();
+            builder.Services.AddAutoMapper(typeof(Program));
 
             var app = builder.Build();
 

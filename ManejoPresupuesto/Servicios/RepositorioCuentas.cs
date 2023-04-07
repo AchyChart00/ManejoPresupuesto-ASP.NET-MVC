@@ -47,7 +47,7 @@ namespace ManejoPresupuesto.Servicios
                                                                     WHERE tc.UsuarioId = @UsuarioId AND Cuentas.Id = @Id", new { id, usuarioId});
         }
 
-        public async Task actualizar(CuentaCreacionViewModel cuenta)
+        public async Task Actualizar(CuentaCreacionViewModel cuenta)
         {
             using var connection = new SqlConnection(connectionString);
             await connection.ExecuteAsync(@"UPDATE Cuentas
@@ -55,6 +55,12 @@ namespace ManejoPresupuesto.Servicios
                                     TipoCuentaId=@TipoCuentaId
                                     WHERE Id = @Id;", cuenta); 
             
+        }
+
+        public async Task Borrar(int id)
+        {
+            using var connection = new SqlConnection(connectionString);
+            await connection.ExecuteAsync("DELETE Cuentas WHERE Id = @Id;", new { id});
         }
 
     }

@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\FullStack\CSharp\CShapCurso\CursoASPNET_MVC\ManejoPresupuesto\ManejoPresupuesto
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/FullStack/CSharp/CShapCurso/CursoASPNET_MVC/ManejoPresupuesto/ManejoPresupuesto/Views/Categorias/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/FullStack/CSharp/CShapCurso/CursoASPNET_MVC/ManejoPresupuesto/ManejoPresupuesto/Views/Cuentas/Borrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhc1xCb3JyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

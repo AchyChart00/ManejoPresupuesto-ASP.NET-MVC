@@ -64,7 +64,9 @@
                         <td>
                             <a asp-controller="transacciones" 
                             asp-action="Editar"
-                            asp-route-id="@transaccion.Id">
+                            asp-route-id="@transaccion.Id"
+                            asp-route-urlRetorno="@ViewBag.urlRetorno"
+                            >
                                 <i class="bi-pencil"></i>
                             </a>
                         </td>

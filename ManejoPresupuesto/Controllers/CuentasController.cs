@@ -45,7 +45,7 @@ namespace ManejoPresupuesto.Controllers
 
             return View(modelo); 
         }
-
+        [HttpGet]
         public async Task<IActionResult> Detalle(int id, int mes, int anio)
         {
             var usuarioId = servicioUsuarios.ObtenerUsuarioId();
@@ -102,6 +102,7 @@ namespace ManejoPresupuesto.Controllers
             ViewBag.anioAnterior = fechaInicio.AddMonths(-1).Year;  
             ViewBag.mesPosterior = fechaInicio.AddMonths(1).Month;
             ViewBag.anioPosterior = fechaInicio.AddMonths(1).Year;
+            ViewBag.urlRetorno = HttpContext.Request.Path + HttpContext.Request.QueryString;
             return View(modelo);
 
         }

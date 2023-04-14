@@ -118,6 +118,21 @@ namespace ManejoPresupuesto.Servicios
         
         }
 
+        public async Task<IEnumerable<ResultadoObtenerPorMes>> ObtenerPorMes(int usuarioId, int anio)
+        {
+            using var connection = new SqlConnection(connectionString);
+            return await connection.QueryAsync<ResultadoObtenerPorMes>(@"
+                                            SELECT MONTH(FechaTransaccion) as Mes,
+                                            SUM(Monto) as Monto, cat.TipoOperacionId
+                                            FROM Transacciones
+                                            INNER JOIN Categorias cat 
+                                            ON cat.Id = Transacciones.CategoriaId
+                                            WHERE Transacciones.UsuarioId = @usuarioId AND YEAR(FechaTransaccion) = @Anio
+                                            GROUP BY MONTH(FechaTransaccion), cat.TipoOperacionId",
+                                            new { usuarioId, anio});
+
+        }
+
         public async Task Borrar(int id)
         {
             using var connection = new SqlConnection(connectionString);

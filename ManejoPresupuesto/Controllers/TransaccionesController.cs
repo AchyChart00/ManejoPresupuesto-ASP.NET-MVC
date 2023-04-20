@@ -122,7 +122,7 @@ namespace ManejoPresupuesto.Controllers
                         .FirstOrDefault(),
                 }).ToList();
 
-            for (int mes = 1; mes < 12; mes++)
+            for (int mes = 1; mes <= 12; mes++)
             {
                 var transaccion = transaccionesAgrupadas.FirstOrDefault(x => x.Mes == mes);
                 var fechaReferencia = new DateTime(anio, mes, 1);

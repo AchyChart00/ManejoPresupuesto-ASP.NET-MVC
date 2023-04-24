@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "E:\\FullStack\\CSharp\\CShapCurso\\CursoASPNET_MVC\\ManejoPresupuesto\\ManejoPresupuesto\\wwwroot\\lib\\FullCalendar\\main.min.css",
+      "PackagePath": "staticwebassets\\lib\\FullCalendar\\main.min.css"
+    },
+    {
+      "Id": "E:\\FullStack\\CSharp\\CShapCurso\\CursoASPNET_MVC\\ManejoPresupuesto\\ManejoPresupuesto\\wwwroot\\lib\\FullCalendar\\main.min.js",
+      "PackagePath": "staticwebassets\\lib\\FullCalendar\\main.min.js"
+    },
+    {
       "Id": "E:\\FullStack\\CSharp\\CShapCurso\\CursoASPNET_MVC\\ManejoPresupuesto\\ManejoPresupuesto\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

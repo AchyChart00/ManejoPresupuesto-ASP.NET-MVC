@@ -4,7 +4,7 @@
 
 <partial name="_SubMenu" Model="SubMenuTransacciones.Calendario"></partial>
 
-<div id="calendario"><div/>
+<div id="calendario"> </div>
 
 @section Scripts {
     <script src="~/lib/fullcalendar/main.min.js"></script>
@@ -14,41 +14,7 @@
             const calendario = new FullCalendar.Calendar(calendarioEl, {
                 dayMaxEventRows:3,
                 initialView: 'dayGridMonth',
-                events:[
-                        {
-                        title:'2,500',
-                        start:'2023-04-24',
-                            end: '2023-04-24'
-                        },
-                        {
-                            title: '1,500',
-                            start: '2023-04-24',
-                            end: '2023-04-24',
-                            color:'red'
-                        },
-                        {
-                            title: '700',
-                            start: '2023-04-24',
-                            end: '2023-04-24'
-                        },
-                        {
-                            title: '800',
-                            start: '2023-04-24',
-                            end: '2023-04-24',
-                            color: 'red'
-                        },
-                        {
-                            title: '585.99',
-                            start: '2023-04-18',
-                            end: '2023-04-18'
-                        },
-                        {
-                            title: '300',
-                            start: '2023-04-24',
-                            end: '2023-04-24',
-                            color: 'red'
-                        }
-                ]
+                    events: '/transacciones/ObtenerTransaccionesCalendario'
             });
 
 

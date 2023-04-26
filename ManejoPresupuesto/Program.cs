@@ -1,5 +1,7 @@
+using ManejoPresupuesto.Models;
 using ManejoPresupuesto.Servicios;
 using ManejoPresupuesto.Servicios.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace ManejoPresupuesto
 {
@@ -18,6 +20,9 @@ namespace ManejoPresupuesto
             builder.Services.AddTransient<IRepositorioTransacciones, RepositorioTransacciones>();
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddTransient<IServicioReportes, ServicioReportes>();
+            builder.Services.AddTransient<IRepositorioUsuarios, RepositorioUsuarios>();
+            builder.Services.AddTransient<IUserStore<Usuario>, UsuarioStore>();
+            builder.Services.AddIdentityCore<Usuario>();
             builder.Services.AddAutoMapper(typeof(Program));
             
 

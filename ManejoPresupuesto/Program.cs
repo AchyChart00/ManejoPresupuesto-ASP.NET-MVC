@@ -27,8 +27,8 @@ namespace ManejoPresupuesto
                 opciones.Password.RequireDigit = false;
                 opciones.Password.RequireLowercase = false;
                 opciones.Password.RequireUppercase = false;
-                opciones.Password.RequireNonAlphanumeric = false;   
-            });
+                opciones.Password.RequireNonAlphanumeric = false;
+            }).AddErrorDescriber<MensajesDeErrorIdentity>();
             builder.Services.AddAutoMapper(typeof(Program));
             
 

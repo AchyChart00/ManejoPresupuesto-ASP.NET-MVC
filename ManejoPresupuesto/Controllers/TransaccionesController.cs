@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Reflection;
 using System.Data;
 using ClosedXML.Excel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManejoPresupuesto.Controllers
 {
+    
     public class TransaccionesController : Controller
     {
         private readonly IServicioUsuarios servicioUsuarios;
@@ -36,7 +38,6 @@ namespace ManejoPresupuesto.Controllers
             this.mapper = mapper;
             this.servicioReportes = servicioReportes;
         }
-
         public async Task<IActionResult> Index(int mes, int anio)
         {
             var usuarioId = servicioUsuarios.ObtenerUsuarioId();

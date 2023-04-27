@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Abstractions;
+using System.Security.Claims;
 
 namespace ManejoPresupuesto.Controllers
 {
@@ -23,6 +24,16 @@ namespace ManejoPresupuesto.Controllers
         [HttpGet]
         public IActionResult Registro()
         {
+            //Solamente si el usuario esta autenticado
+            /*if (User.Identity.IsAuthenticated)
+            {
+                var claims = User.Claims.ToList();
+                var usuarioIdReal = claims.Where(x=>x.Type == ClaimTypes.NameIdentifier).FirstOrDefault();
+                var id = usuarioIdReal.Value;
+            }
+            else{
+
+            }*/
             return View();  
         }
 

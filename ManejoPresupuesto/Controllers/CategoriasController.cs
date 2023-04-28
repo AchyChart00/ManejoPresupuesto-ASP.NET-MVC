@@ -41,6 +41,7 @@ namespace ManejoPresupuesto.Controllers
         [HttpGet]
         public IActionResult Crear() 
         {
+           
             return View();  
         }
 

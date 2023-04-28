@@ -23,8 +23,18 @@ namespace ManejoPresupuesto.Controllers
         {
             var usuarioId = servicioUsuarios.ObtenerUsuarioId();
             var categorias = await repositorioCategorias.Obtener(usuarioId, paginacionViewModel);
+            var totalCategorias = await repositorioCategorias.Contar(usuarioId);
 
-            return View(categorias);    
+            var respuestaVM = new PaginacionRespuesta<Categoria>
+            {
+                Elementos = categorias,
+                Pagina = paginacionViewModel.Pagina,
+                RecordsPorPagina = paginacionViewModel.recordsPorPagina,
+                CantidadTotalRecords = totalCategorias, 
+                BaseURL = "/Categorias"
+            };
+
+            return View(respuestaVM);    
         }
 
         [HttpGet]

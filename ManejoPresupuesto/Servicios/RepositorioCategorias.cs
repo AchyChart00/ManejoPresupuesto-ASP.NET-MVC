@@ -27,12 +27,16 @@ namespace ManejoPresupuesto.Servicios
             
         }
 
-        public async Task<IEnumerable<Categoria>> Obtener(int usuarioId)
+        public async Task<IEnumerable<Categoria>> Obtener(int usuarioId, PaginacionViewModel paginacion)
         {
             using var connection = new SqlConnection(connectionString);
 
             return await connection.QueryAsync<Categoria>(
-                "SELECT * FROM Categorias WHERE UsuarioId = @UsuarioId",
+                @$"SELECT * FROM Categorias 
+                    WHERE UsuarioId = @UsuarioId
+                    ORDER BY Nombre
+                    OFFSET {paginacion.RecordsAsaltar} ROW FETCH NEXT {paginacion.recordsPorPagina}
+                    ROWS ONLY",
                 new { usuarioId}
                 );
         }
